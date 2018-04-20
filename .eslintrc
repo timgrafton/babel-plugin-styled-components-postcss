@@ -1,0 +1,12 @@
+{
+	"extends": ["airbnb"],
+	"rules": {
+		"semi": [1, "never"],
+		"react/jsx-filename-extension": [2, {"extensions": [".js", ".jsx"]}],
+		"no-unused-expressions": [2, {"allowTaggedTemplates": true}],
+		"function-paren-newline": 0,
+		"no-cond-assign": [2, "except-parens"],
+		"arrow-parens": [2, "as-needed"],
+		"semi-style": [1, "first"]
+	}
+}

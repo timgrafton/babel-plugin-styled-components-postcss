@@ -1,0 +1,47 @@
+{
+  "name": "babel-plugin-styled-components-postcss",
+  "version": "0.1.0",
+  "description": "Babel plugin for running postcss on styled components",
+  "keywords": [
+    "styled-components",
+    "babel-plugin",
+    "postcss"
+  ],
+  "babel": {
+    "env": {
+      "plugin": {
+        "presets": [
+          "@babel/preset-env"
+        ]
+      },
+      "test": {
+        "presets": [
+          "@babel/preset-react"
+        ],
+        "plugins": [
+          "./dist/index.js"
+        ]
+      }
+    }
+  },
+  "author": "Tim Grafton <m.grafton15@hotmail.com>",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "cross-env BABEL_ENV=plugin babel src -d dist",
+    "test": "cross-env BABEL_ENV=test babel test/src -d test/dist"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "deasync-promise": "^1.0.1",
+    "postcss": "^6.0.20",
+    "postcss-load-config": "^1.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.42",
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "@babel/preset-react": "^7.0.0-beta.42",
+    "cross-env": "^5.1.4",
+    "css-mqpacker": "^6.0.2"
+  }
+}
