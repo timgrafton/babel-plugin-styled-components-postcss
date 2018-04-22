@@ -1,12 +1,15 @@
 {
   "name": "babel-plugin-styled-components-postcss",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Babel plugin for running postcss on styled components",
   "keywords": [
     "styled-components",
     "babel-plugin",
     "postcss"
   ],
+  "homepage": "https://github.com/timgrafton/babel-plugin-styled-components-postcss",
+  "repository": "git@github.com:timgrafton/babel-plugin-styled-components-postcss.git",
+  "bugs": "https://github.com/timgrafton/babel-plugin-styled-components-postcss/issues",
   "babel": {
     "env": {
       "plugin": {
