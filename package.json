@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-styled-components-postcss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Babel plugin for running postcss on styled components",
   "keywords": [
     "styled-components",
