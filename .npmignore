@@ -1,7 +1,1 @@
-src/
-test/
-.eslintrc
-.eslintignore
-.prettierrc
-LICENSE
-postcss.config.js
+*

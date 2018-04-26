@@ -30,8 +30,8 @@
   "author": "Tim Grafton <m.grafton15@hotmail.com>",
   "main": "dist/index.js",
   "scripts": {
-    "prepare": "cross-env BABEL_ENV=plugin babel src -d dist",
-    "test": "cross-env BABEL_ENV=test babel test/src -d test/dist"
+    "prepare": "eslint src/index.js && cross-env BABEL_ENV=plugin babel src -d dist",
+    "test": "eslint test/src/index.js && cross-env BABEL_ENV=test babel test/src -d test/dist"
   },
   "license": "MIT",
   "dependencies": {
@@ -45,6 +45,11 @@
     "@babel/preset-env": "^7.0.0-beta.42",
     "@babel/preset-react": "^7.0.0-beta.42",
     "autoprefixer": "^8.3.0",
-    "cross-env": "^5.1.4"
+    "cross-env": "^5.1.4",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0"
   }
 }

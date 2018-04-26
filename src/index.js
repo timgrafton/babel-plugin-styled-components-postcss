@@ -3,7 +3,7 @@ const postcssrc = require('postcss-load-config')
 const deasyncPromise = require('deasync-promise')
 
 // styled component expression regex
-const expressionsRegex = /__QUASI_EXPR_(\d+)__/g
+  const expressionsRegex = /__QUASI_EXPR_(\d+)__/g
 
 const splitExpressions = css => {
   let found
