@@ -5,4 +5,8 @@ const Arrow = styled.div`
   flex: 2;
 `
 
-export default () => <div><Arrow /></div>
+export default () => (
+  <div>
+    <Arrow />
+  </div>
+)

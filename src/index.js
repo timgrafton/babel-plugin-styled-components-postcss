@@ -3,7 +3,7 @@ const postcssrc = require('postcss-load-config')
 const deasyncPromise = require('deasync-promise')
 
 // styled component expression regex
-  const expressionsRegex = /__QUASI_EXPR_(\d+)__/g
+const expressionsRegex = /__QUASI_EXPR_(\d+)__/g
 
 const splitExpressions = css => {
   let found
@@ -41,7 +41,12 @@ const generateExpressionPlaceholder = i => `__QUASI_EXPR_${i}__`
 module.exports = ({ types: t }) => ({
   visitor: {
     TaggedTemplateExpression(path) {
-      const { node: { tag, quasi: { quasis, expressions } } } = path
+      const {
+        node: {
+          tag,
+          quasi: { quasis, expressions },
+        },
+      } = path
       const tmatch = () =>
         (tag.object && tag.object.name && tag.object.name === 'styled') ||
         (tag.property && tag.property.name && tag.property.name === 'extend') ||
@@ -67,7 +72,9 @@ module.exports = ({ types: t }) => ({
 
       const { quasiTerms, expressionTerms } = splitExpressions(css)
       const quasisAst = buildQuasisAst(t, quasiTerms)
-      const expressionsAst = expressionTerms.map(exprIndex => expressions[exprIndex])
+      const expressionsAst = expressionTerms.map(
+        exprIndex => expressions[exprIndex],
+      )
 
       quasis.splice(0, quasis.length, ...quasisAst)
       expressions.splice(0, expressions.length, ...expressionsAst)

@@ -1,12 +1,24 @@
 # babel-plugin-styled-components-postcss
 
-Babel plugin for running [postcss](https://github.com/postcss/postcss) on [styled components](https://github.com/styled-components/styled-components)
+Babel plugin for running [postcss](https://github.com/postcss/postcss) on [styled components](https://github.com/styled-components/styled-components).
 
-### Example
+### Prerequisites
+
+*babel-core
+*babel-preset-env
+*babel-preset-react
+*postcss
+
+### Installation
+
 ```
 npm install babel-plugin-styled-components-postcss autoprefixer --save-dev
 ```
+
+### Example
+
 **postcss.config.js**
+
 ```
 module.exports = () => ({
   plugins: {
@@ -16,6 +28,7 @@ module.exports = () => ({
 ```
 
 **Before:**
+
 ```
 const Arrow = styled.div`
   flex: 2;
@@ -23,6 +36,7 @@ const Arrow = styled.div`
 ```
 
 **After:**
+
 ```
 const Arrow = styled.div`
   -webkit-box-flex: 2;
@@ -31,8 +45,19 @@ const Arrow = styled.div`
 `;
 ```
 
-This plugin runs postcss on styled components as-is. So any operations which require the component ID will not work. For e.g. postcss-nested.
-The purpose of this plugin is not to replace [polished](https://github.com/styled-components/polished) but rather to provide users with the ability to use postcss features it does not support. For e.g. url rebasing with postcss-url.
+### Configuration
 
-*NOTE*: This plugin works on the condition that a postcss config file is used, whether that be in JS, JSON etc. (Uses [postcss-load-config](https://github.com/michael-ciniawsky/postcss-load-config))
+**.babelrc**
 
+```
+{
+    "plugins": [
+      "styled-components-postcss"
+    ]
+}
+```
+
+This plugin runs postcss on styled components as-is. So any operations which require the component ID will not work; for e.g. postcss-nested.
+The purpose of this plugin is not to replace [polished](https://github.com/styled-components/polished) but rather to provide users with the ability to use postcss features it does not support; for e.g. url rebasing with postcss-url.
+
+**NOTE:** This plugin works on the condition that a postcss config file is used, whether that be in JS, JSON etc (Uses [postcss-load-config](https://github.com/michael-ciniawsky/postcss-load-config)).
