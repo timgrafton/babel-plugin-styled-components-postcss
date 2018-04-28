@@ -1,32 +1,37 @@
 {
   "name": "babel-plugin-styled-components-postcss",
-  "version": "1.0.4",
+  "version": "1.0.5-0",
   "description": "Babel plugin for running postcss on styled components",
-  "keywords": ["styled-components", "babel-plugin", "postcss"],
-  "homepage":
-    "https://github.com/timgrafton/babel-plugin-styled-components-postcss",
-  "repository":
-    "git@github.com:timgrafton/babel-plugin-styled-components-postcss.git",
-  "bugs":
-    "https://github.com/timgrafton/babel-plugin-styled-components-postcss/issues",
+  "keywords": [
+    "styled-components",
+    "babel-plugin",
+    "postcss"
+  ],
+  "homepage": "https://github.com/timgrafton/babel-plugin-styled-components-postcss",
+  "repository": "git@github.com:timgrafton/babel-plugin-styled-components-postcss.git",
+  "bugs": "https://github.com/timgrafton/babel-plugin-styled-components-postcss/issues",
   "babel": {
     "env": {
       "plugin": {
-        "presets": ["env"]
+        "presets": [
+          "env"
+        ]
       },
       "test": {
-        "presets": ["react"],
-        "plugins": ["./dist/index.js"]
+        "presets": [
+          "react"
+        ],
+        "plugins": [
+          "./dist/index.js"
+        ]
       }
     }
   },
   "author": "Tim Grafton <m.grafton15@hotmail.com>",
   "main": "dist/index.js",
   "scripts": {
-    "prepublishOnly":
-      "eslint src/index.js && cross-env BABEL_ENV=plugin babel src -d dist",
-    "test":
-      "eslint test/src/index.js && cross-env BABEL_ENV=test babel test/src -d test/dist"
+    "prepublishOnly": "eslint src/index.js && cross-env BABEL_ENV=plugin babel src -d dist",
+    "test": "eslint test/src/index.js && cross-env BABEL_ENV=test babel test/src -d test/dist"
   },
   "license": "MIT",
   "dependencies": {
