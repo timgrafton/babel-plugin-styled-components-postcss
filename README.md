@@ -4,15 +4,15 @@ Babel plugin for running [postcss](https://github.com/postcss/postcss) on [style
 
 ### Prerequisites
 
-*babel-core
-*babel-preset-env
-*babel-preset-react
-*postcss
+* babel-core
+* babel-preset-env
+* babel-preset-react
+* postcss
 
 ### Installation
 
 ```
-npm install babel-plugin-styled-components-postcss autoprefixer --save-dev
+npm install babel-plugin-styled-components-postcss --save-dev
 ```
 
 ### Example

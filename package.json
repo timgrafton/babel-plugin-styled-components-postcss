@@ -36,7 +36,6 @@
   "license": "MIT",
   "dependencies": {
     "deasync-promise": "^1.0.1",
-    "postcss": "^6.0.20",
     "postcss-load-config": "^1.2.0"
   },
   "devDependencies": {
