@@ -12,7 +12,7 @@ Babel plugin for running [postcss](https://github.com/postcss/postcss) on [style
 ### Installation
 
 ```
-npm install babel-plugin-styled-components-postcss --save-dev
+npm i babel-plugin-styled-components-postcss --save-dev
 ```
 
 ### Example
