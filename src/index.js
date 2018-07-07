@@ -68,7 +68,7 @@ module.exports = ({ types: t }) => ({
 
       // const processed = postcss(plugins).process(css, options).css
       const { plugins, options } = deasyncPromise(postcssrc())
-      ;({ css } = postcss(plugins).process(css, options))
+      ;({ css } = deasyncPromise(postcss(plugins).process(css, options)))
 
       const { quasiTerms, expressionTerms } = splitExpressions(css)
       const quasisAst = buildQuasisAst(t, quasiTerms)
