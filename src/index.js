@@ -49,14 +49,13 @@ module.exports = ({ types: t }) => ({
       } = path
       const tmatch = () =>
         (tag.object && tag.object.name && tag.object.name === 'styled') ||
-        (tag.property && tag.property.name && tag.property.name === 'extend') ||
         (tag.callee && tag.callee.name && tag.callee.name === 'styled') ||
         (tag.callee &&
           tag.callee.object &&
           tag.callee.object.object &&
           tag.callee.object.object.name &&
           tag.callee.object.object.name === 'styled') ||
-        (tag.name && tag.name === 'injectGlobal')
+        (tag.name && tag.name === 'createGlobalStyle')
 
       if (!tmatch()) return
 
