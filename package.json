@@ -8,18 +8,25 @@
     "postcss"
   ],
   "homepage": "https://github.com/timgrafton/babel-plugin-styled-components-postcss",
-  "repository": "git@github.com:timgrafton/babel-plugin-styled-components-postcss.git",
   "bugs": "https://github.com/timgrafton/babel-plugin-styled-components-postcss/issues",
+  "repository": "git@github.com:timgrafton/babel-plugin-styled-components-postcss.git",
+  "license": "MIT",
+  "author": "Tim Grafton",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublishOnly": "eslint src/index.js && cross-env BABEL_ENV=plugin babel src -d dist",
+    "test": "eslint test/src/index.js && cross-env BABEL_ENV=test babel test/src -d test/dist"
+  },
   "babel": {
     "env": {
       "plugin": {
         "presets": [
-          "env"
+          "@babel/preset-env"
         ]
       },
       "test": {
         "presets": [
-          "react"
+          "@babel/preset-react"
         ],
         "plugins": [
           "./dist/index.js"
@@ -27,36 +34,40 @@
       }
     }
   },
-  "author": "Tim Grafton <m.grafton15@hotmail.com>",
-  "main": "dist/index.js",
-  "scripts": {
-    "prepublishOnly": "eslint src/index.js && cross-env BABEL_ENV=plugin babel src -d dist",
-    "test": "eslint test/src/index.js && cross-env BABEL_ENV=test babel test/src -d test/dist"
-  },
-  "license": "MIT",
+  "browserslist": [
+    "last 4 versions"
+  ],
   "dependencies": {
     "deasync-promise": "^1.0.1",
-    "postcss-load-config": "^1.2.0"
+    "postcss-load-config": "^3.1.0"
   },
   "devDependencies": {
-    "autoprefixer": "^8.3.0",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "cross-env": "^5.1.4",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0",
-    "postcss": "^6.0.22",
-    "prettier": "^1.12.1"
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
+    "autoprefixer": "^10.2.6",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "postcss": "^8.3.5",
+    "prettier": "^2.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.0"
   },
   "peerDependencies": {
-    "babel-core": "6.x",
-    "babel-preset-env": "1.x",
-    "babel-preset-react": "6.x",
-    "postcss": "6.x"
+    "@babel/core": ">=7",
+    "@babel/preset-env": ">=7",
+    "@babel/preset-react": ">=7",
+    "postcss": ">=8",
+    "react": ">=17",
+    "react-dom": ">=17",
+    "styled-components": ">=5"
   }
 }

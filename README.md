@@ -4,10 +4,13 @@ Babel plugin for running [postcss](https://github.com/postcss/postcss) on [style
 
 ### Prerequisites
 
-* babel-core
-* babel-preset-env
-* babel-preset-react
-* postcss
+- @babel/core
+- @babel/preset-env
+- @babel/preset-react
+- postcss
+- react
+- react-dom
+- styled-components
 
 ### Installation
 
@@ -22,9 +25,17 @@ npm i babel-plugin-styled-components-postcss --save-dev
 ```
 module.exports = () => ({
   plugins: {
-    autoprefixer: { browsers: ['last 4 versions'] }
+    autoprefixer: {}
   },
 })
+```
+
+**package.json**
+
+```
+{
+  browserslist: ["last 4 versions"]
+}
 ```
 
 **Before:**
